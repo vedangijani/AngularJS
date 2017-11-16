@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-sanitize.js"></script>
+        
+        <script src="../app.js"></script>
+        <script src="Paging.directive.js"></script>
+        <script src="Paging.controller.js"></script>
+        
+    </head>
+    <body ng-app="app">
+        <div ng-controller="PageCtrl as ctl">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="record in ctl.slicedRecords track by $index" ng-bind="record"></li>
+            </ul>
+            <br/>
+           <pagination totalitems = ctl.totalitems  itemsperpage=ctl.itemsperpage ng-model="ctl.currentIndex" ng-change="ctl.pageChange()"></pagination>  
+        </div> 
+        
+    </body>
+</html>

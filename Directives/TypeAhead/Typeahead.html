@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-sanitize.js"></script>
+        <script src="../app.js"></script>
+        <script src="Typeahead.directive.js"></script>
+        <script src="Typeahead.controller.js"></script>
+        <script src="Typeahead.filter.js"></script>
+         
+    </head>
+    <body ng-app="app">
+        <div class="container" ng-controller="TypeaheadCtl">
+            Type here: <typeahead items="items" on-select="OnSelect()" term="item"></typeahead>
+        </div>
+    </body>
+</html>
